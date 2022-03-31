@@ -1,20 +1,18 @@
-terraform{
-    required_providers{
-        azurerm = {
-            source = "haschicorp/azurerm"
-            version = "2.88.1"
-        }
+terraform {
+  required_providers {
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = "3.0.1"
     }
+  }
 }
 
 provider "azurerm" {
-    features{
-        
-    }
+  # Configuration options
 }
 
 module "ResourceGroup" {
-    source = "./ResourceGroup"
-    rgname = "Rampupfinal"
-    location = "East US"
+  source = "./ResourceGroup"
+  base_name = "Terraformiac"
+  location = "East US"
 }
